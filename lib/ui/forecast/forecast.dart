@@ -22,18 +22,14 @@ class ForecastPage extends StatelessWidget {
               return const Center(child: CircularProgressIndicator());
             }
 
-            //we have some data now!
             if (data.localWeatherForecast.isNotEmpty) {
-              //task 2
-              return SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: data.localWeatherForecast
-                      .map((weather) => DailyForecast(weather: weather))
-                      .toList(),
-                ),
+              return Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: data.localWeatherForecast
+                    .map((weather) => DailyForecast(weather: weather))
+                    .toList(),
               );
             }
 

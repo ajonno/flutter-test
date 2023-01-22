@@ -19,18 +19,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //1. task one
-    return MultiProvider( /* 1. task one */
-      providers:  [
-        ChangeNotifierProvider(
-          create: (_) => WeatherModel()
-        ),
-      ],
-      child: MaterialApp(
-        title: 'Simple Weather',
-        theme: ThemeData(primarySwatch: Colors.blue),
-        home: const LocationLoader(),
-      ),
+    return MaterialApp(
+      title: 'Simple Weather',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const LocationLoader(),
     );
   }
 }
@@ -48,12 +40,10 @@ class LocationLoader extends StatelessWidget {
         if (data.location == null) {
           return const LocationError();
         }
-        return const HomePage(); 
-        //1. task one
-        // ChangeNotifierProvider(
-        //   create: (_) => WeatherModel(),
-        //   child: const HomePage(),
-        // );
+        return ChangeNotifierProvider(
+          create: (_) => WeatherModel(),
+          child: const HomePage(),
+        );
       },
     );
   }
