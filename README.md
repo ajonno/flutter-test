@@ -19,7 +19,7 @@ Objectives:
 
 Extra:
 
-- [ ] The forecast response data is a list of hourly results spanning **5 days**, we need to convert it into 5 items, **1 per day**.
+- [ ] The forecast response data is a list of hourly results; we need to convert it into **1 per day**.
 
 ## Info
 
