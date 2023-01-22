@@ -58,7 +58,7 @@ class WeatherModel extends ChangeNotifier {
 
 List<dynamic> _hourlyForecastToDays(List<dynamic> data) {
   //Fold the hourly entries into days
-  // return data;
+  // return data;  //<== uncomment this line to see the hourly data
   Map<int, List<Map<String, dynamic>>> groups = data.fold({}, (prev, current) {
     int date = current?["dt"];
 
